@@ -35,16 +35,18 @@ resource "aws_iam_role_policy" "xosphere_organization_ri_data_gatherer_lambda_ro
       "Sid": "AllowOrganizationOperations",
       "Effect": "Allow",
       "Action": [
-        "organizations:DescribeOrganization"
-	    ],
+        "organizations:DescribeOrganization",
+        "organizations:ListAccounts"
+      ],
       "Resource": "*"
     },
     {
       "Sid": "AllowCostExplorerOperations",
       "Effect": "Allow",
       "Action": [
-		    "ce:GetReservationUtilization"
-	    ],
+        "ce:GetReservationUtilization",
+        "ce:GetSavingsPlansUtilizationDetails"
+      ],
       "Resource": "*"
     }
   ]
